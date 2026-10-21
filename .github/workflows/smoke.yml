@@ -1,0 +1,15 @@
+name: Smoke
+
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Print repository name and current date
+        run: |
+          echo "Repository: ${GITHUB_REPOSITORY}"
+          echo "Current date: $(date)"
